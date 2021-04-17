@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
-import com.muhammetbaytar.videogamesapp.CustomViewHolder
-import com.muhammetbaytar.videogamesapp.GameList
-import com.muhammetbaytar.videogamesapp.MainAdapter
 import com.muhammetbaytar.videogamesapp.R
+import com.muhammetbaytar.videogamesapp.adapter.CustomViewHolder
+import com.muhammetbaytar.videogamesapp.adapter.MainAdapter
+import com.muhammetbaytar.videogamesapp.model.GameList
 import kotlinx.android.synthetic.main.fragment_like.*
 import okhttp3.*
 import java.io.IOException
@@ -34,7 +34,7 @@ class FragmentLike : Fragment() {
 
     }
 
-    fun getLikeId() {
+    private fun getLikeId() {
 
 
         try {

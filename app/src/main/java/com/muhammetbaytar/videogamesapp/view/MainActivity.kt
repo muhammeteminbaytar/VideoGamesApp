@@ -13,15 +13,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-      //  recyclerViewMain.adapter=MainAdapter()
 
-
-
-        ClickBottomNav()
+        clickBottomNav()
 
 
     }
-    fun ClickBottomNav() {
+    fun clickBottomNav() {
 
         supportFragmentManager.beginTransaction().add(R.id.fragment_object, FragmentHome()).commit()
 
@@ -35,13 +32,6 @@ class MainActivity : AppCompatActivity() {
             true
 
         }}
-
-
-
-
-
-
-
 
 
 }

@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.muhammetbaytar.videogamesapp.Games
 import com.muhammetbaytar.videogamesapp.R
+import com.muhammetbaytar.videogamesapp.model.Games
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_view_pager.view.*
 
 class ViewPagerAdapter(
         val games: List<Games>,
-        val onItemClickCallBack:(Int)->Unit
+        private val onItemClickCallBack:(Int)->Unit
 ) : RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder>() {
     inner class ViewPagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 

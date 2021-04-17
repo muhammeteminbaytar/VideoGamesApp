@@ -11,8 +11,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.gson.GsonBuilder
-import com.muhammetbaytar.videogamesapp.*
+import com.muhammetbaytar.videogamesapp.R
+import com.muhammetbaytar.videogamesapp.adapter.CustomViewHolder
+import com.muhammetbaytar.videogamesapp.adapter.MainAdapter
 import com.muhammetbaytar.videogamesapp.adapter.ViewPagerAdapter
+import com.muhammetbaytar.videogamesapp.model.GameList
+import com.muhammetbaytar.videogamesapp.model.Games
 import kotlinx.android.synthetic.main.fragment_home.*
 import okhttp3.*
 import java.io.IOException
@@ -30,13 +34,13 @@ class FragmentHome : Fragment() {
 
         recyclerViewMain.layoutManager = LinearLayoutManager(view.context)
 
-        LoadGameData()
+        loadGameData()
 
 
     }
 
 
-    fun LoadGameData() {
+    fun loadGameData() {
         val client = OkHttpClient()
 
         val request = Request.Builder()
@@ -73,10 +77,7 @@ class FragmentHome : Fragment() {
                     }
                     viewpager.adapter = adapter
 
-
-
                     viewpager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-//view pager için atama yapılıyor fakat bazı hatalardan dolayı uygulama çöküyor
 
                 }
             }
@@ -92,10 +93,8 @@ class FragmentHome : Fragment() {
 
     }
 
-
     fun makeSearch(gameList: GameList) {
 
-        //arama işlemi yapar
         home_txt_search?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }

@@ -6,8 +6,8 @@ import android.text.Html
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.GsonBuilder
-import com.muhammetbaytar.videogamesapp.CustomViewHolder
 import com.muhammetbaytar.videogamesapp.R
+import com.muhammetbaytar.videogamesapp.adapter.CustomViewHolder
 import com.muhammetbaytar.videogamesapp.model.Details
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_game_detail.*
@@ -22,12 +22,12 @@ class GameDetailAct : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_detail)
-        var GAME_ID=intent.getIntExtra(CustomViewHolder.GAME_ID,28)
+        val gameID=intent.getIntExtra(CustomViewHolder.GAME_ID,28)
 
 
-        LoadDetailData(GAME_ID)
-        likeControl(GAME_ID)
-        showLike(GAME_ID)
+        loadDetailData(gameID)
+        likeControl(gameID)
+        showLike(gameID)
     }
 
     fun showLike(LikeId: Int){
@@ -98,7 +98,7 @@ class GameDetailAct : AppCompatActivity() {
 
 
     }
-    fun LoadDetailData(indexid:Int){
+    fun loadDetailData(indexid:Int){
         val client = OkHttpClient()
 
         val request = Request.Builder()
