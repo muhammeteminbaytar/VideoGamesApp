@@ -105,6 +105,7 @@ class FragmentHome : Fragment() {
                     filterList=gameList.results
                     viewpager.visibility=View.VISIBLE
 
+
                 }else{
                     viewpager.visibility=View.GONE
                     filterList = gameList.results.filter {
