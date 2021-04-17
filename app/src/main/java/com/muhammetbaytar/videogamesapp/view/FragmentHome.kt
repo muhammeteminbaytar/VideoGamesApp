@@ -108,7 +108,7 @@ class FragmentHome : Fragment() {
                 }else{
                     viewpager.visibility=View.GONE
                     filterList = gameList.results.filter {
-                        it.name.contains(s.toString())
+                        it.name.contains(s.toString(),ignoreCase = true)
                     }
                 }
 
