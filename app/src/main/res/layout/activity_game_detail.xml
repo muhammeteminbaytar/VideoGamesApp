@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.GameDetailAct">
+
+  <ImageView
+      android:id="@+id/detail_img"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      app:layout_constraintDimensionRatio="w,16:9"
+      app:layout_constraintEnd_toEndOf="parent"
+
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/detail_txt_name"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="20dp"
+      android:layout_marginEnd="10dp"
+      android:text="Name Of Game"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/detail_img" />
+
+  <TextView
+      android:id="@+id/detail_txt_released"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:text="Released Date"
+      android:textSize="14sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="@+id/detail_txt_name"
+      app:layout_constraintTop_toBottomOf="@+id/detail_txt_name" />
+
+  <TextView
+      android:id="@+id/detail_txt_rate"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:text="Metacritic Rate"
+      android:textSize="14sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="@+id/detail_txt_released"
+      app:layout_constraintTop_toBottomOf="@+id/detail_txt_released" />
+
+  <ScrollView
+      android:id="@+id/scrollView2"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/divider3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/detail_txt_desc"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="20dp"
+          android:layout_marginEnd="8dp"
+          android:layout_marginBottom="10dp"
+          android:text="America"
+          android:textSize="15sp" />
+
+    </LinearLayout>
+  </ScrollView>
+
+  <View
+      android:id="@+id/divider3"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="15dp"
+      android:background="?android:attr/listDivider"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/detail_txt_rate" />
+
+  <ImageView
+      android:id="@+id/detail_btn_like"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_marginEnd="8dp"
+      android:tint="#717171"
+      app:layout_constraintEnd_toEndOf="@+id/detail_img"
+      app:layout_constraintTop_toTopOf="@+id/detail_txt_name"
+      app:srcCompat="@drawable/ic_like" />
+</androidx.constraintlayout.widget.ConstraintLayout>
