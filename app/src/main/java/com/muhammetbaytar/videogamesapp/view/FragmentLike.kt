@@ -49,7 +49,6 @@ class FragmentLike : Fragment() {
 
                 }
             }
-            //println(arraylistLike.get(1))
 
         } catch (e: Exception) {
         }
@@ -60,10 +59,7 @@ class FragmentLike : Fragment() {
         val client = OkHttpClient()
 
         val request = Request.Builder()
-                .url("https://rawg-video-games-database.p.rapidapi.com/games")
-                .get()
-                .addHeader("x-rapidapi-key", "fc49f6e132msh060efd1094ef794p1b5619jsn4c1ca936cef8")
-                .addHeader("x-rapidapi-host", "rawg-video-games-database.p.rapidapi.com")
+                .url("https://api.rawg.io/api/games?key=c256c2f96cd74e0294c1e8da8c3e8aad")
                 .build()
 
         client.newCall(request).enqueue(object : Callback {

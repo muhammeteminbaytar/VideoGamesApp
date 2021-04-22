@@ -44,10 +44,7 @@ class FragmentHome : Fragment() {
         val client = OkHttpClient()
 
         val request = Request.Builder()
-                .url("https://rawg-video-games-database.p.rapidapi.com/games")
-                .get()
-                .addHeader("x-rapidapi-key", "fc49f6e132msh060efd1094ef794p1b5619jsn4c1ca936cef8")
-                .addHeader("x-rapidapi-host", "rawg-video-games-database.p.rapidapi.com")
+                .url("https://api.rawg.io/api/games?key=c256c2f96cd74e0294c1e8da8c3e8aad")
                 .build()
 
         client.newCall(request).enqueue(object : Callback {
@@ -56,7 +53,7 @@ class FragmentHome : Fragment() {
             }
 
             override fun onResponse(call: Call, response: Response) {
-                val body = response?.body?.string()
+                val body = response.body?.string()
 
                 val gson = GsonBuilder().create()
                 val gameList = gson.fromJson(body, GameList::class.java)

@@ -102,10 +102,8 @@ class GameDetailAct : AppCompatActivity() {
         val client = OkHttpClient()
 
         val request = Request.Builder()
-            .url("https://rawg-video-games-database.p.rapidapi.com/games/"+indexid.toString())
-            .get()
-            .addHeader("x-rapidapi-key", "fc49f6e132msh060efd1094ef794p1b5619jsn4c1ca936cef8")
-            .addHeader("x-rapidapi-host", "rawg-video-games-database.p.rapidapi.com")
+            .url("https://api.rawg.io/api/games/"+indexid.toString()+"?key=c256c2f96cd74e0294c1e8da8c3e8aad")
+           //https://api.rawg.io/api/games/28?key=c256c2f96cd74e0294c1e8da8c3e8aad
             .build()
 
         client.newCall(request).enqueue(object : Callback {
@@ -123,7 +121,7 @@ class GameDetailAct : AppCompatActivity() {
                     detail_txt_name.text=detailList.name
                     detail_txt_rate.text="Metacritic Rate : "+detailList.metacritic.toString()
                     detail_txt_released.text= "Release Date : "+detailList.released
-                    detail_txt_desc.text=Html.fromHtml( detailList.description)
+                    detail_txt_desc.text= Html.fromHtml( detailList.description)
 
                     Picasso.with(this@GameDetailAct).load(detailList.background_image).into(detail_img)
 
